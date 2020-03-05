@@ -1,4 +1,4 @@
-#colas-bitumes
+Colas Bitumes
 
 How to make app running After downloading the code source run these commands
 1. composer global require "laravel/installer"
