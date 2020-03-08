@@ -21,22 +21,22 @@
     </thead>
     <tbody>
         @foreach($suppliers as $supplier)
-        <tr>
-            <td>{{$supplier->id}}</td>
-            <td>{{$supplier->name}}</td>
-            <td>{{$supplier->address}}</td>
-            <td>{{$supplier->phone}}</td>
-            <td>
-                <a href="{{ route('suppliers.edit',$supplier->id)}}" class="btn btn-primary">Modifier</a>
-            </td>
-            <td>
-                <form action="{{ route('suppliers.destroy', $supplier->id)}}" method="post">
-                  @csrf
-                  @method('DELETE')
-                  <button class="btn btn-danger" type="submit">Supprimer</button>
-                </form>
-            </td>
-        </tr>
+          <tr>
+              <td>{{$supplier->id}}</td>
+              <td>{{$supplier->name}}</td>
+              <td>{{$supplier->address}}</td>
+              <td>{{$supplier->phone}}</td>
+              <td>
+                  <a href="{{ route('suppliers.edit',$supplier->id)}}" class="btn btn-primary">Modifier</a>
+              </td>
+              <td>
+                  <form action="{{ route('suppliers.destroy', $supplier->id)}}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger" type="submit">Supprimer</button>
+                  </form>
+              </td>
+          </tr>
         @endforeach
     </tbody>
   </table>

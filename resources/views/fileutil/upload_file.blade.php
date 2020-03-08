@@ -9,7 +9,7 @@
       <select name="suppliers" class="custom-select">
         <option selected>Choisir le fournisseur</option>
         @foreach($suppliers as $supplier)
-          <option value="{{ $supplier->id }}">{{ $supplier->name }}</option>
+          <option value="{{ $supplier->name }}">{{ $supplier->name }}</option>
           @endforeach
       </select>
     </div>
@@ -27,5 +27,5 @@
     var fileName = $(this).val().split("\\").pop();
     $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
   });
-  </script>
+</script>
 @endsection

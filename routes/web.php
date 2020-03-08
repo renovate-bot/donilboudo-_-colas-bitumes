@@ -13,10 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
+Route::get('/', 'DeliveryProcessController@index');
+Route::get('deliveryprocess', 'DeliveryProcessController@index');
 
 Route::resource('suppliers', 'SupplierController');
 Route::resource('products', 'ProductController');

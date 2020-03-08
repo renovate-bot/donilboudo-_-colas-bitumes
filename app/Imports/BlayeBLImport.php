@@ -2,6 +2,7 @@
 
 namespace App\Imports;
 
+use App\BlayeBL;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\Importable;
 
@@ -11,7 +12,17 @@ class BlayeBLImport implements ToModel
 
     public function model(array $row)
     {
-        return new BlayeBLImport([
+        if (!isset($row[0]) && !isset($row[1]) && !isset($row[2])) {
+            return null;
+        }
+        if ($row[1] === NULL) {
+            return null;
+        }
+        if ($row[0] === "Jour du BL") {
+            return null;
+        }
+
+        return new BlayeBL([
             'bl_day' => $row[0],
             'command_number' => $row[1],
             'accounting_site_code' => $row[2],
