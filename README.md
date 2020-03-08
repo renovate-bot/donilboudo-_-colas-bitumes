@@ -7,4 +7,5 @@ How to make app running After downloading the code source run these commands
 4. npm install
 5. php artisan migrate
 6. php artisan db:seed --class=SuppliersTableSeeder
+
 That's it!!!
